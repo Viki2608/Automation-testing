@@ -1,3 +1,3 @@
 docker: "dockerimage"
 spurce: "dockerhub"
-comment: "Hello"
+comment: "Hi"
