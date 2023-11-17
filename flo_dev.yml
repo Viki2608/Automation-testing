@@ -1,3 +1,33 @@
-docker: "dockerimage"
-spurce: "dockerhub"
-comment: "Good"
+import: demo.yml
+schema_version: "1.0"
+
+app:
+  version: "6.6"
+  chearid: DUMMY
+  bsn: DUMMY
+  code: dotnet-core-test
+  name: dotnet-core-test
+
+build_tool:
+  name: dotnet
+  version: "3.8"
+
+artifacts:
+  dotnetQA-Test.zip: .
+
+notification_users:
+  - abc@gmail.com
+
+release: build_deploy
+
+post-deploy:
+  test:
+    tool: readyapi
+    enable: yes
+
+build_extra_params:
+  bin_path: "dotnet-core-api\\bin\\Release\\netcoreapp2.0\\publish\\"
+
+poll_interval: "5 minutes"
+
+comment: "21"
