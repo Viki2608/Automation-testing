@@ -30,4 +30,4 @@ build_extra_params:
 
 poll_interval: "5 minutes"
 
-comment: "hello"
+comment: "hi"
